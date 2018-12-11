@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "my_app/app_base.html" %}
+{% block body_block %}
+<div class="jumbotron">
+
+    <h1>I am school_detail</h1>
+    <h2>School_details:</h2>
+    <p>Name: {{school_details.name}}</p>
+    <p>The principal: {{school_details.principal}}</p>
+    <p>Location: {{school_details.location}}</p>
+
+    <hr>
+
+    <h3>Students</h3>
+    {% for student in school_details.students.all %}
+         <!--(students.all)come from related_name = 'students' in the Model-->
+        <p>{{student.name}} who is {{student.age}} years old.</p>
+    {% endfor %}
+</div>
+
+
+<div class="container">
+    <p><a class="btn btn-warning" href="{% url 'my_app:update' pk=school_details.pk %}">Update</a></p>
+</div>
+{% endblock %}

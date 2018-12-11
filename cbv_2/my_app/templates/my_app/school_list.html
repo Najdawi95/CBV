@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "my_app/app_base.html" %}
+{% block body_block %}
+<div class="jumbotron">
+
+    <h1>Welcome: I am school_list</h1>
+    <ul>
+        {% for school in schools %}
+        <h2><li> <a href="{{school.id}}"> {{school.name}} </a> </li></h2>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

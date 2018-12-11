@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+{% load staticfiles %}
+
+<div class="jumbotron">
+
+    <h1>Home Page<small>I am Index</small></h1>
+    <b style="color: red;">Injected Content: </b><em>{{ inject_me }}</em>
+
+</div>
+{% endblock %}
